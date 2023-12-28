@@ -8,14 +8,12 @@ import ReactDOM from 'react-dom/client';
 //
 // import { router } from './routers';
 // import { store } from './store';
-
-const App = () => (
-  <div>Root fdfffssssss</div>
-);
+import './css.css'
+const App = () => <div>Root fdfffssssss</div>;
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  <App/>
+  <App />,
   // <React.StrictMode>
   //   <Provider store={store}>
   //     <ThemeProvider>
