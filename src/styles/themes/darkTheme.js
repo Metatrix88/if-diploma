@@ -1,3 +1,5 @@
+import {darkThemeColorBgBody, darkThemeColorGeneralBlue} from '../../constants/styles.constatnts';
+
 export const darkTheme = {
   palette: {
     text: {
@@ -13,10 +15,10 @@ export const darkTheme = {
     },
     icons: {
       // bgColor: darkThemeColorDarkBlue,
-      // main: darkThemeColorDarkBlue,
+      main: darkThemeColorGeneralBlue,
     },
     background: {
-      // main: darkThemeColorGray,
+      main: darkThemeColorBgBody,
       // section: darkThemeBgColor,
       // secondary: darkThemeBgColor,
       // tertiary: darkThemeColorGray,
@@ -25,7 +27,7 @@ export const darkTheme = {
       // pages: darkThemeBgColor,
     },
     accent: {
-      // hover: darkThemeAccentColor,
+      hover: darkThemeColorGeneralBlue,
       // btn: darkThemeColorDarkBlue,
     },
     border: {

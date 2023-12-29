@@ -1,8 +1,9 @@
- import {
+import {
   fontFamily,
   lineHeight,
-  screenMd,
-  screenSm,
+  MOBILE_BREAKPOINT,
+  TABLET_BREAKPOINT,
+  whiteThemeColorBlack,
 } from '../../constants/styles.constatnts';
 
 export const typographyStyles = (theme) => ({
@@ -12,52 +13,45 @@ export const typographyStyles = (theme) => ({
     fontFamily: fontFamily.join(', '),
     fontStyle: 'normal',
     fontWeight: 400,
-    color: theme.palette.text.tertiary,
+    color: whiteThemeColorBlack,
   },
 
   a: {
     display: 'inline-block',
     textDecoration: 'none',
-    fontSize: 24,
-    color: theme.palette.text.quaternary,
+    fontSize: 16,
+    color: whiteThemeColorBlack,
   },
 
   h2: {
-    fontWeight: 500,
-    fontSize: 40,
+    fontWeight: 700,
+    fontSize: 38,
     lineHeight: lineHeight,
     textAlign: 'center',
   },
   h3: {
-    fontWeight: 400,
-    fontSize: 24,
+    fontWeight: 700,
+    fontSize: 20,
     lineHeight: lineHeight,
   },
   h4: {
-    fontWeight: 400,
+    fontWeight: 700,
     fontSize: 18,
     lineHeight: lineHeight,
-    color: theme.palette.text.quaternary,
   },
 
-  //For mobile tablets:
-  [`@media (max-width: ${screenMd})`]: {
-    a: {
-      fontSize: 20,
-    },
+  //For tablets:
+  [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
     h2: {
       fontSize: 34,
-    },
-    h3: {
-      fontSize: 20,
     },
     h4: {
       fontSize: 16,
     },
   },
 
-  // For mobile phones:
-  [`@media (max-width: ${screenSm})`]: {
+  // For mobiles:
+  [`@media (max-width: ${MOBILE_BREAKPOINT})`]: {
     a: {
       fontSize: 12,
     },
@@ -65,10 +59,10 @@ export const typographyStyles = (theme) => ({
       fontSize: 28,
     },
     h3: {
-      fontSize: 15,
+      fontSize: 14,
     },
     h4: {
-      fontSize: 15,
+      fontSize: 14,
     },
   },
 });

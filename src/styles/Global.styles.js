@@ -5,7 +5,6 @@ import { resetStyles } from './base/Reset.styles';
 import { fontsStyles } from '../assets/fonts/Fonts.styles';
 import { typographyStyles } from './base/Typography.styles';
 
-
 export const globalStyles = (theme) => ({
   '@global': {
     ...resetStyles,

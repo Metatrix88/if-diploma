@@ -1,3 +1,5 @@
+import {whiteThemeColorGeneralRed, whiteThemeColorWhite} from '../../constants/styles.constatnts';
+
 export const whiteTheme = {
   palette: {
     text: {
@@ -13,10 +15,10 @@ export const whiteTheme = {
     },
     icons: {
       // bgColor: whiteThemeColorWhite,
-      // main: whiteThemeColorBlue,
+      main: whiteThemeColorGeneralRed,
     },
     background: {
-      // main: whiteThemeColorWhite,
+      main: whiteThemeColorWhite,
       // section: whiteThemeBgColor,
       // secondary: whiteThemeBorderLightColor,
       // tertiary: whiteThemeBorderLightColor,
@@ -25,7 +27,7 @@ export const whiteTheme = {
       // pages: whiteThemeBgColorPages,
     },
     accent: {
-      // hover: whiteThemeAccentColor,
+      hover: whiteThemeColorGeneralRed,
       // btn: whiteThemeColorBlue,
     },
     border: {
