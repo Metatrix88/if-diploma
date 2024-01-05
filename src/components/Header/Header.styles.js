@@ -11,6 +11,7 @@ export const headerStyles = (theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     paddingTop: 30,
+    paddingBottom: 80,
     gap: 16,
   },
   buttons: {
@@ -38,6 +39,10 @@ export const headerStyles = (theme) => ({
 
   //For tablets:
   [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
+    root: {
+      paddingTop: 24,
+      paddingBottom: 40,
+    },
     buttonFirstPage: {
       fontSize: 16,
     },
@@ -49,6 +54,8 @@ export const headerStyles = (theme) => ({
   // For mobiles:
   [`@media (max-width: ${MOBILE_BREAKPOINT})`]: {
     root: {
+      paddingTop: 16,
+      paddingBottom: 16,
       gap: 8,
     },
     buttonFirstPage: {

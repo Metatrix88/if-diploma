@@ -1,9 +1,7 @@
 import { createUseStyles } from 'react-jss';
 
 // constants
-import {
-  whiteThemeColorSecondaryGray
-} from '../../../constants/styles.constatnts';
+import { whiteThemeColorSecondaryGray } from '../../../constants/styles.constatnts';
 
 export const searchStyles = () => ({
   root: {

@@ -23,7 +23,7 @@ export const darkThemeColorBgBody = '#d1dced';
 export const MOBILE_BREAKPOINT = '767px';
 export const TABLET_BREAKPOINT = '1024px';
 export const DESKTOP_SMALL_BREAKPOINT = '1280px';
-export const DESKTOP_BREAKPOINT = '1440px'
+export const DESKTOP_BREAKPOINT = '1440px';
 
 // Radius:
 export const MOBILE_RADIUS = 4;
@@ -41,5 +41,3 @@ export const lineHeight = 1.16;
 // export const sectionPaddingTopBottomLg = 120;
 // export const sectionPaddingTopBottomMd = 80;
 // export const sectionPaddingTopBottomSm = 40;
-
-

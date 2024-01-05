@@ -1,4 +1,5 @@
 import {
+  DESKTOP_SMALL_BREAKPOINT,
   fontFamily,
   lineHeight,
   MOBILE_BREAKPOINT,
@@ -40,13 +41,23 @@ export const typographyStyles = (theme) => ({
     lineHeight: lineHeight,
   },
 
-  //For tablets:
-  [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
+  //For desktops:
+  [`@media (max-width: ${DESKTOP_SMALL_BREAKPOINT})`]: {
     h2: {
-      fontSize: 34,
+      fontSize: 32,
     },
     h4: {
       fontSize: 16,
+    },
+  },
+
+  //For tablets:
+  [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
+    h2: {
+      fontSize: 28,
+    },
+    h4: {
+      fontSize: 14,
     },
   },
 
@@ -56,7 +67,7 @@ export const typographyStyles = (theme) => ({
       fontSize: 12,
     },
     h2: {
-      fontSize: 28,
+      fontSize: 26,
     },
     h3: {
       fontSize: 14,

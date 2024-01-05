@@ -1,4 +1,7 @@
-import {whiteThemeColorGeneralRed, whiteThemeColorWhite} from '../../constants/styles.constatnts';
+import {
+  whiteThemeColorGeneralRed, whiteThemeColorGray,
+  whiteThemeColorWhite,
+} from '../../constants/styles.constatnts';
 
 export const whiteTheme = {
   palette: {
@@ -7,11 +10,11 @@ export const whiteTheme = {
       // secondary: whiteThemeColorBlack,
       // tertiary: whiteThemeColorBlack,
       // quaternary: whiteThemeColorBlue,
-      // quinary: whiteThemeSecondaryTextColor,
+      textBtn: whiteThemeColorWhite,
     },
     buttons: {
-      // main: whiteThemeColorWhite,
-      // secondary: whiteThemeColorBlue,
+      text: whiteThemeColorGray,
+      outlined: whiteThemeColorGeneralRed,
     },
     icons: {
       // bgColor: whiteThemeColorWhite,

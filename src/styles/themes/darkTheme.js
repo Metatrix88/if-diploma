@@ -1,4 +1,7 @@
-import {darkThemeColorBgBody, darkThemeColorGeneralBlue} from '../../constants/styles.constatnts';
+import {
+  darkThemeColorBgBody,
+  darkThemeColorGeneralBlue, darkThemeColorGray, darkThemeColorWhite,
+} from '../../constants/styles.constatnts';
 
 export const darkTheme = {
   palette: {
@@ -7,15 +10,15 @@ export const darkTheme = {
       // secondary: darkThemeColorWhite,
       // tertiary: darkThemeColorYellow,
       // quaternary: darkThemeColorYellow,
-      // quinary: darkThemeSecondaryTextColor,
+      textBtn: darkThemeColorWhite,
     },
     buttons: {
-      // main: darkThemeColorDarkBlue,
-      // secondary: darkThemeColorDarkBlue,
+      text: darkThemeColorGray,
+      outlined: darkThemeColorGeneralBlue,
     },
     icons: {
       // bgColor: darkThemeColorDarkBlue,
-      main: darkThemeColorGeneralBlue,
+      main: darkThemeColorGeneralBlue ,
     },
     background: {
       main: darkThemeColorBgBody,

@@ -15,5 +15,5 @@ root.render(
     <ThemeProvider>
       <RouterProvider router={router} fallbackElement={<Loader />} />
     </ThemeProvider>
-  </Provider>
+  </Provider>,
 );

@@ -1,7 +1,11 @@
 import { createUseStyles } from 'react-jss';
-import {whiteThemeColorGray} from '../../../constants/styles.constatnts';
+import {
+  DESKTOP_RADIUS,
+  DESKTOP_SMALL_BREAKPOINT, MOBILE_BREAKPOINT, MOBILE_RADIUS,
+  TABLET_BREAKPOINT, TABLET_RADIUS,
+} from '../../../constants/styles.constatnts';
 
-export const buttonStyles = () => ({
+export const buttonStyles = (theme) => ({
   root: {
     display: 'flex',
     cursor: 'pointer',
@@ -15,32 +19,29 @@ export const buttonStyles = () => ({
     },
     '&$text': {
       fontWeight: 700,
-      color: whiteThemeColorGray,
+      color: theme.palette.buttons.text,
       padding: 0,
       width: 'auto',
       backgroundColor: 'transparent',
     },
-    // '&$outlined': {
-    //   borderRadius: buttonRadiusLg,
-    //   border: `1px solid ${theme.palette.border.secondary}`,
-    //   maxWidth: 128,
-    //   height: 48,
-    //   width: '100%',
-    //   fontSize: 18,
-    //   padding: '12px 16px',
-    //   lineHeight: '1.16',
-    //   color: theme.palette.text.quaternary,
+    '&$outlined': {
+      borderRadius: DESKTOP_RADIUS,
+      backgroundColor: theme.palette.buttons.outlined,
+      height: 48,
+      width: '100%',
+      fontSize: 20,
+      lineHeight: '1.16',
+      color: theme.palette.text.textBtn,
 
-      // '&:hover': {
-      //   border: `1px solid ${theme.palette.accent.hover}`,
-      //   color: theme.palette.accent.hover,
-      // },
+    // '&:hover': {
+    //   border: `1px solid ${theme.palette.accent.hover}`,
+    //   color: theme.palette.accent.hover,
+    },
     // },
     // '&$primary': {
     //   background: theme.palette.buttons.secondary,
     //   color: theme.palette.text.main,
     // },
-
 
     // '&$counter': {
     //   width: 30,
@@ -54,6 +55,34 @@ export const buttonStyles = () => ({
     //     color: 'rgba(206, 206, 206, 1)',
     //   },
     // },
+  },
+  //For desktops:
+  [`@media (max-width: ${DESKTOP_SMALL_BREAKPOINT})`]: {},
+
+  //For tablets:
+  [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
+    root: {
+
+      '&$outlined': {
+        borderRadius: TABLET_RADIUS,
+        height: 36,
+        fontSize: 18,
+      },
+    },
+    outlined: {},
+  },
+
+  // For mobiles:
+  [`@media (max-width: ${MOBILE_BREAKPOINT})`]: {
+    root: {
+
+      '&$outlined': {
+        borderRadius: MOBILE_RADIUS,
+        height: 32,
+        fontSize: 14,
+      },
+    },
+    outlined: {},
   },
   outlined: {},
   primary: {},
