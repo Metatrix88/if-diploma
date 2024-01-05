@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -10,6 +10,8 @@ import { themeVariants } from '../../constants/themeVariants';
 import { Container } from '../Container';
 import { Search } from '../Search';
 import { Button } from '../UI/Button';
+import { LogInModal } from '../LogInModal';
+import { SingUpModal } from '../SingUpModal';
 
 // icons
 import { Logo, Night } from '../../assets/icons';
@@ -19,13 +21,13 @@ import { setVariant } from '../../store/slices/themes.slice';
 
 // styles
 import { useHeaderStyles } from './Header.styles';
-import { LogInModal } from '../LogInModal';
 
 export const Header = () => {
   const classes = useHeaderStyles();
-  const [showModalLogIn, setShowModalLogIn] = useState(false);
   const dispatch = useDispatch();
   const themeMode = useSelector((state) => state.themes.variant);
+  const logInRef = useRef(null);
+  const singUpRef = useRef(null);
 
   const handleChangeThemes = () => {
     dispatch(
@@ -37,36 +39,35 @@ export const Header = () => {
     );
   };
 
-  const handleOpenModal = () => {
-    setShowModalLogIn(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModalLogIn(false);
-  };
-
   return (
-    <Container className={classes.root}>
-      <Link to={PATH.index}>
-        <Logo />
-      </Link>
-      <Search />
-      <div className={classes.buttons}>
-        <Button onClick={handleChangeThemes} aria-label="Screen Theme Switch">
-          <Night />
-        </Button>
-        <Button
-          variant="text"
-          className={classes.buttonFirstPage}
-          onClick={handleOpenModal}
-        >
-          Log in
-        </Button>
-        {showModalLogIn && <LogInModal onClose={handleCloseModal} />}
-        <Button variant="text" className={classes.buttonFirstPage}>
-          Sing up
-        </Button>
-      </div>
-    </Container>
+    <>
+      <Container className={classes.root}>
+        <Link to={PATH.index}>
+          <Logo />
+        </Link>
+        <Search />
+        <div className={classes.buttons}>
+          <Button onClick={handleChangeThemes} aria-label="Screen Theme Switch">
+            <Night />
+          </Button>
+          <Button
+            variant="text"
+            className={classes.buttonFirstPage}
+            onClick={() => logInRef.current.open()}
+          >
+            Log in
+          </Button>
+          <Button
+            variant="text"
+            className={classes.buttonFirstPage}
+            onClick={() => singUpRef.current.open()}
+          >
+            Sing up
+          </Button>
+        </div>
+      </Container>
+      <LogInModal ref={logInRef} />
+      <SingUpModal ref={singUpRef} />
+    </>
   );
 };
