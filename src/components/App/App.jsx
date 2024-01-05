@@ -9,7 +9,7 @@ import React from 'react';
 
 // components
 import { Header } from '../Header';
-import {Main} from '../Main';
+import { Main } from '../Main';
 // import { Header } from '../Header';
 // import { TopSection } from '../TopSection';
 // import { Available } from '../Available';
@@ -44,7 +44,7 @@ export const App = () => {
   return (
     <>
       <Header />
-      <Main/>
+      <Main />
       {/*<Header />*/}
       {/*<TopSection />*/}
       {/*{loading && <Loader />}*/}

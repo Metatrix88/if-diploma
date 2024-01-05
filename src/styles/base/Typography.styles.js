@@ -5,7 +5,7 @@ import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
   whiteThemeColorBlack,
-} from '../../constants/styles.constatnts';
+} from '../../constants/styles.constants';
 
 export const typographyStyles = (theme) => ({
   body: {
@@ -28,16 +28,20 @@ export const typographyStyles = (theme) => ({
     fontWeight: 700,
     fontSize: 38,
     lineHeight: lineHeight,
-    textAlign: 'center',
   },
   h3: {
-    fontWeight: 700,
-    fontSize: 20,
+    fontWeight: 600,
+    fontSize: 28,
     lineHeight: lineHeight,
   },
   h4: {
     fontWeight: 700,
-    fontSize: 18,
+    fontSize: 24,
+    lineHeight: lineHeight,
+  },
+  h5: {
+    fontWeight: 700,
+    fontSize: 20,
     lineHeight: lineHeight,
   },
 
@@ -46,8 +50,14 @@ export const typographyStyles = (theme) => ({
     h2: {
       fontSize: 32,
     },
+    h3: {
+      fontSize: 26,
+    },
     h4: {
-      fontSize: 16,
+      fontSize: 20,
+    },
+    h5: {
+      fontSize: 18,
     },
   },
 
@@ -56,8 +66,14 @@ export const typographyStyles = (theme) => ({
     h2: {
       fontSize: 28,
     },
+    h3: {
+      fontSize: 20,
+    },
     h4: {
-      fontSize: 14,
+      fontSize: 16,
+    },
+    h5: {
+      fontSize: 16,
     },
   },
 
@@ -67,12 +83,15 @@ export const typographyStyles = (theme) => ({
       fontSize: 12,
     },
     h2: {
-      fontSize: 26,
+      fontSize: 22,
     },
     h3: {
       fontSize: 14,
     },
     h4: {
+      fontSize: 14,
+    },
+    h5: {
       fontSize: 14,
     },
   },

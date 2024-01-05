@@ -1,4 +1,5 @@
 import React from 'react';
+import { node } from 'prop-types';
 import classNames from 'classnames';
 
 // styles
@@ -11,4 +12,8 @@ export const Container = ({ children, className }) => {
       {children}
     </section>
   );
+};
+
+Container.propTypes = {
+  children: node.isRequired,
 };

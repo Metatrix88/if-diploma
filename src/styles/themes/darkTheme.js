@@ -1,7 +1,9 @@
 import {
   darkThemeColorBgBody,
-  darkThemeColorGeneralBlue, darkThemeColorGray, darkThemeColorWhite,
-} from '../../constants/styles.constatnts';
+  darkThemeColorGeneralBlue,
+  darkThemeColorGray,
+  darkThemeColorWhite,
+} from '../../constants/styles.constants';
 
 export const darkTheme = {
   palette: {
@@ -18,7 +20,7 @@ export const darkTheme = {
     },
     icons: {
       // bgColor: darkThemeColorDarkBlue,
-      main: darkThemeColorGeneralBlue ,
+      main: darkThemeColorGeneralBlue,
     },
     background: {
       main: darkThemeColorBgBody,

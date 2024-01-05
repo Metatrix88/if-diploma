@@ -3,7 +3,7 @@ import {
   DESKTOP_SMALL_BREAKPOINT,
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
-} from '../../../constants/styles.constatnts';
+} from '../../../constants/styles.constants';
 
 export const nightIconStyles = (theme) => ({
   root: {

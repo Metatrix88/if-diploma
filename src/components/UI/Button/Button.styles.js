@@ -1,9 +1,12 @@
 import { createUseStyles } from 'react-jss';
 import {
   DESKTOP_RADIUS,
-  DESKTOP_SMALL_BREAKPOINT, MOBILE_BREAKPOINT, MOBILE_RADIUS,
-  TABLET_BREAKPOINT, TABLET_RADIUS,
-} from '../../../constants/styles.constatnts';
+  DESKTOP_SMALL_BREAKPOINT,
+  MOBILE_BREAKPOINT,
+  MOBILE_RADIUS,
+  TABLET_BREAKPOINT,
+  TABLET_RADIUS,
+} from '../../../constants/styles.constants';
 
 export const buttonStyles = (theme) => ({
   root: {
@@ -26,22 +29,15 @@ export const buttonStyles = (theme) => ({
     },
     '&$outlined': {
       borderRadius: DESKTOP_RADIUS,
-      backgroundColor: theme.palette.buttons.outlined,
       height: 48,
       width: '100%',
       fontSize: 20,
       lineHeight: '1.16',
-      color: theme.palette.text.textBtn,
-
-    // '&:hover': {
-    //   border: `1px solid ${theme.palette.accent.hover}`,
-    //   color: theme.palette.accent.hover,
     },
-    // },
-    // '&$primary': {
-    //   background: theme.palette.buttons.secondary,
-    //   color: theme.palette.text.main,
-    // },
+    '&$primary': {
+      backgroundColor: theme.palette.buttons.outlined,
+      color: theme.palette.text.textBtn,
+    },
 
     // '&$counter': {
     //   width: 30,
@@ -62,7 +58,6 @@ export const buttonStyles = (theme) => ({
   //For tablets:
   [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
     root: {
-
       '&$outlined': {
         borderRadius: TABLET_RADIUS,
         height: 36,
@@ -75,7 +70,6 @@ export const buttonStyles = (theme) => ({
   // For mobiles:
   [`@media (max-width: ${MOBILE_BREAKPOINT})`]: {
     root: {
-
       '&$outlined': {
         borderRadius: MOBILE_RADIUS,
         height: 32,

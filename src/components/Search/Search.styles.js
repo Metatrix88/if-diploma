@@ -7,7 +7,7 @@ import {
   whiteThemeColorSecondaryBlue,
   whiteThemeColorSecondaryGray,
   whiteThemeColorWhite,
-} from '../../constants/styles.constatnts';
+} from '../../constants/styles.constants';
 
 export const searchStyles = (theme) => ({
   root: {

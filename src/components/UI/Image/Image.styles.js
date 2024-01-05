@@ -4,7 +4,7 @@ export const imagesStyles = () => ({
   root: {
     display: 'block',
     width: '100%',
-  }
+  },
 });
 
 export const useImagesStyles = createUseStyles(imagesStyles, {

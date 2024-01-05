@@ -1,5 +1,5 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { node, string } from 'prop-types';
 import classNames from 'classnames';
 
 // styles
@@ -45,4 +45,6 @@ Button.propTypes = {
   variant: string,
   color: string,
   className: string,
+  type: string,
+  children: node,
 };

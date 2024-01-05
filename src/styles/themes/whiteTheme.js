@@ -1,7 +1,8 @@
 import {
-  whiteThemeColorGeneralRed, whiteThemeColorGray,
+  whiteThemeColorGeneralRed,
+  whiteThemeColorGray,
   whiteThemeColorWhite,
-} from '../../constants/styles.constatnts';
+} from '../../constants/styles.constants';
 
 export const whiteTheme = {
   palette: {

@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { useTheme } from 'react-jss';
 
+// styles
 import { useNightIconStyles } from './Night.icon.styles';
 
 export const Night = ({ className }) => {

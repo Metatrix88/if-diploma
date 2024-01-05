@@ -1,9 +1,10 @@
 import { createUseStyles } from 'react-jss';
 import {
-  DESKTOP_SMALL_BREAKPOINT, MOBILE_BREAKPOINT,
+  DESKTOP_SMALL_BREAKPOINT,
+  MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
-  whiteThemeColorSecondaryBlue
-} from '../../constants/styles.constatnts';
+  whiteThemeColorSecondaryBlue,
+} from '../../constants/styles.constants';
 
 export const mainStyles = () => ({
   wrapMain: {
@@ -24,12 +25,9 @@ export const mainStyles = () => ({
     padding: 0,
   },
   title: {
-    textAlign: 'left',
     marginBottom: 40,
   },
   textInfo: {
-    fontSize: 28,
-    fontWeight: 600,
     marginBottom: 40,
   },
   button: {
@@ -60,7 +58,6 @@ export const mainStyles = () => ({
       marginBottom: 28,
     },
     textInfo: {
-      fontSize: 20,
       marginBottom: 28,
     },
     button: {
@@ -80,7 +77,6 @@ export const mainStyles = () => ({
       marginBottom: 16,
     },
     textInfo: {
-      fontSize: 14,
       marginBottom: 16,
     },
     button: {
@@ -92,4 +88,4 @@ export const mainStyles = () => ({
   },
 });
 
-export const useMainStyles = createUseStyles(mainStyles, {name: 'Main'});
+export const useMainStyles = createUseStyles(mainStyles, { name: 'Main' });

@@ -2,7 +2,7 @@ import { createUseStyles } from 'react-jss';
 import {
   MOBILE_BREAKPOINT,
   TABLET_BREAKPOINT,
-} from '../../../constants/styles.constatnts';
+} from '../../../constants/styles.constants';
 
 export const logoStyles = (theme) => ({
   root: {
