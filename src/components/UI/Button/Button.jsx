@@ -22,6 +22,7 @@ export const Button = ({
 
   const variants = {
     [classes.outlined]: variant === 'outlined',
+    [classes.contained]: variant === 'contained',
     [classes.text]: variant === 'text',
     [classes.icon]: variant === 'icon',
     [classes.counter]: variant === 'counter',

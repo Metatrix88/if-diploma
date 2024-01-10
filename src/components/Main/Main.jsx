@@ -23,7 +23,7 @@ export const Main = () => {
             Over 400.000 books from&nbsp;fiction&nbsp;to the
             business&nbsp;literature
           </h3>
-          <Button className={classes.button} variant="outlined" color="primary">
+          <Button className={classes.button} variant="contained" color="primary">
             Let’s start
           </Button>
         </div>

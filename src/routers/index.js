@@ -11,6 +11,7 @@ import { PATH } from '../constants/paths';
 import { App } from '../components/App';
 import { SystemLayout } from '../components/SystemLayout';
 import { ErrorBoundary } from '../components/ErrorBoundary';
+import {HomePage} from '../pages/HomePage';
 // import { Login } from '../pages/Login';
 // import { HotelPage } from '../pages/HotelPage';
 // import { ReviewsPage } from '../pages/ReviewsPage';
@@ -25,6 +26,7 @@ export const router = createBrowserRouter(
       <Route errorElement={<ErrorBoundary />}>
         {/*<Route path={PATH.login} element={<Login />} />*/}
         <Route path={PATH.index} element={<App />} />
+        <Route path='/home' element={<HomePage />} />
         {/*<Route path={`${PATH.hotelsPage}/:hotelId`} element={<HotelPage />} />*/}
         {/*<Route path={`${PATH.review}/:reviewId`} element={<ReviewsPage />} />*/}
         {/*<Route*/}

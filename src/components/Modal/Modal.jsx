@@ -1,5 +1,5 @@
-import React, {forwardRef, useImperativeHandle, useState} from 'react';
-import {createPortal} from 'react-dom';
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { func, node, string } from 'prop-types';
 
 // components
@@ -10,7 +10,7 @@ import { Close } from '../../assets/icons';
 import { useModalStyles } from './Modal.styles';
 
 // eslint-disable-next-line react/display-name
-export const Modal = forwardRef( ({ title, children }, ref) => {
+export const Modal = forwardRef(({ title, children }, ref) => {
   const classes = useModalStyles();
   const [showModal, setShowModal] = useState(false);
 
@@ -28,7 +28,8 @@ export const Modal = forwardRef( ({ title, children }, ref) => {
   };
 
   return (
-    showModal && createPortal(
+    showModal &&
+    createPortal(
       <>
         <div className={classes.mask} onClick={closeModal} />
         <div className={classes.root}>

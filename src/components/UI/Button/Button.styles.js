@@ -15,6 +15,7 @@ export const buttonStyles = (theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
+    fontSize: 20,
 
     '&$icon': {
       backgroundColor: 'transparent',
@@ -27,30 +28,15 @@ export const buttonStyles = (theme) => ({
       width: 'auto',
       backgroundColor: 'transparent',
     },
-    '&$outlined': {
+    '&$contained': {
       borderRadius: DESKTOP_RADIUS,
       height: 48,
-      width: '100%',
-      fontSize: 20,
       lineHeight: '1.16',
     },
     '&$primary': {
       backgroundColor: theme.palette.buttons.outlined,
       color: theme.palette.text.textBtn,
     },
-
-    // '&$counter': {
-    //   width: 30,
-    //   height: 30,
-    //   border: `1px solid ${theme.palette.border.secondary}`,
-    //   fontSize: 18,
-    //   fontWeight: 400,
-    //
-    //   '&:disabled': {
-    //     border: '1px solid rgba(206, 206, 206, 1)',
-    //     color: 'rgba(206, 206, 206, 1)',
-    //   },
-    // },
   },
   //For desktops:
   [`@media (max-width: ${DESKTOP_SMALL_BREAKPOINT})`]: {},
@@ -58,30 +44,32 @@ export const buttonStyles = (theme) => ({
   //For tablets:
   [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
     root: {
-      '&$outlined': {
+      fontSize: 18,
+
+      '&$contained': {
         borderRadius: TABLET_RADIUS,
         height: 36,
-        fontSize: 18,
       },
     },
-    outlined: {},
+    contained: {},
   },
 
   // For mobiles:
   [`@media (max-width: ${MOBILE_BREAKPOINT})`]: {
     root: {
-      '&$outlined': {
+      fontSize: 14,
+
+      '&$contained': {
         borderRadius: MOBILE_RADIUS,
         height: 32,
-        fontSize: 14,
       },
     },
-    outlined: {},
+    contained: {},
   },
   outlined: {},
   primary: {},
   icon: {},
-  counter: {},
+  contained: {},
   text: {},
 });
 
