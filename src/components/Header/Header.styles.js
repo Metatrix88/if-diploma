@@ -85,9 +85,6 @@ export const useHeaderStyles = createUseStyles(headerStyles, {
   name: 'Header',
 });
 
-
-
-
 // import { createUseStyles } from 'react-jss';
 // import {
 //   DESKTOP_SMALL_BREAKPOINT,

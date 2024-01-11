@@ -1,5 +1,6 @@
 import React, { forwardRef, useId, useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 
 // components
 import { Modal } from '../Modal';
@@ -7,28 +8,43 @@ import { Button } from '../UI/Button';
 
 // styles
 import { useLogInModalStyles } from './LogInModal.styles';
+import { useAuth } from '../../hooks/use-auth';
+// import { setUser } from '../../store/slices/user.slice';
 
 // eslint-disable-next-line react/display-name
 export const LogInModal = forwardRef((_, ref) => {
   const classes = useLogInModalStyles();
   const usernameId = useId();
   const passwordId = useId();
-  const [username, setUserName] = useState('');
-  const [password, setPassword] = useState('');
-  const dispatch = useDispatch();
+  const [enteredUserName, setEnteredUserName] = useState('');
+  const [enteredPassword, setEnteredPassword] = useState('');
+  // const dispatch = useDispatch();
+  const { password, email } = useAuth();
 
   const handleChange = (event) => {
     if (event.target.name === 'username') {
-      setUserName(event.target.value);
+      setEnteredUserName(event.target.value);
     }
     if (event.target.name === 'password') {
-      setPassword(event.target.value);
+      setEnteredPassword(event.target.value);
     }
   };
 
   const handleLogin = (event) => {
     event.preventDefault();
-    dispatch();
+    const auth = getAuth();
+    signInWithEmailAndPassword(auth, email, password)
+      .then(({ user }) => {
+        console.log(user);
+        // dispatch(
+        //   setUser({
+        //     email: user.email,
+        //     token: user.accessToken,
+        //     id: user.uid,
+        //   }),
+        // );
+      })
+      .catch(console.error);
   };
 
   return (
@@ -42,7 +58,7 @@ export const LogInModal = forwardRef((_, ref) => {
           id={usernameId}
           type="text"
           name="username"
-          value={username}
+          value={enteredUserName}
           onChange={handleChange}
           placeholder="Your username"
         />
@@ -54,7 +70,7 @@ export const LogInModal = forwardRef((_, ref) => {
           id={passwordId}
           type="password"
           name="password"
-          value={password}
+          value={enteredPassword}
           onChange={handleChange}
           placeholder="Password"
         />

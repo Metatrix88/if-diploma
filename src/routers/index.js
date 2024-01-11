@@ -11,7 +11,7 @@ import { PATH } from '../constants/paths';
 // components
 import { SystemLayout } from '../components/SystemLayout';
 import { ErrorBoundary } from '../components/ErrorBoundary';
-import { StartPage} from '../pages/StartPage';
+import { StartPage } from '../pages/StartPage';
 // import { Login } from '../pages/Login';
 // import { HotelPage } from '../pages/HotelPage';
 // import { ReviewsPage } from '../pages/ReviewsPage';

@@ -5,15 +5,7 @@ const userSlice = createSlice({
   name: 'user',
   initialState: INITIAL_STATE.user,
   reducers: {
-    setUser: (state, action) => ({
-      ...state,
-      username: action.payload.username,
-      birthdate: action.payload.birthdate,
-      email: action.payload.email,
-      password: action.payload.password,
-      token: action.payload.token,
-      id: action.payload.id,
-    }),
+    setUser: (state, action) => ({ ...state, ...action.payload }),
     removeUser: (state) => ({
       ...state,
       username: null,

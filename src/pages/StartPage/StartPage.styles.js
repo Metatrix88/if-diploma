@@ -2,8 +2,10 @@ import { createUseStyles } from 'react-jss';
 import {
   DESKTOP_RADIUS,
   DESKTOP_SMALL_BREAKPOINT,
-  MOBILE_BREAKPOINT, MOBILE_RADIUS,
-  TABLET_BREAKPOINT, TABLET_RADIUS,
+  MOBILE_BREAKPOINT,
+  MOBILE_RADIUS,
+  TABLET_BREAKPOINT,
+  TABLET_RADIUS,
   whiteThemeColorSecondaryBlue,
 } from '../../constants/styles.constants';
 
@@ -101,4 +103,6 @@ export const startPageStyles = () => ({
   },
 });
 
-export const useStartPageStyles = createUseStyles(startPageStyles, { name: 'StartPage' });
+export const useStartPageStyles = createUseStyles(startPageStyles, {
+  name: 'StartPage',
+});

@@ -21,11 +21,12 @@ import { setVariant } from '../../store/slices/themes.slice';
 
 // styles
 import { useHeaderStyles } from './Header.styles';
+import { useAuth } from '../../hooks/use-auth';
 
 export const Header = () => {
   const classes = useHeaderStyles();
-  const dispatch = useDispatch();
   const themeMode = useSelector((state) => state.themes.variant);
+  const dispatch = useDispatch();
   const logInRef = useRef(null);
   const singUpRef = useRef(null);
 
@@ -38,6 +39,8 @@ export const Header = () => {
       ),
     );
   };
+
+  console.log(useAuth());
 
   return (
     <>
@@ -69,7 +72,11 @@ export const Header = () => {
         </div>
       </Container>
       <LogInModal ref={logInRef} />
-      <SingUpModal ref={singUpRef} />
+      <SingUpModal
+        ref={singUpRef}
+        onSwitchModal={() => logInRef.current.open()}
+        onCloseModal={() => singUpRef.current.close()}
+      />
     </>
   );
 };
