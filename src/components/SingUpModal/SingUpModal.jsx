@@ -52,7 +52,7 @@ export const SingUpModal = forwardRef((_, ref) => {
     const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, password)
       .then(console.log)
-      .catch(console.error)
+      .catch(console.error);
 
     if (username && birthdate && email && password) {
       dispatch(

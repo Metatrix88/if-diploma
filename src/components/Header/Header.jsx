@@ -42,11 +42,13 @@ export const Header = () => {
   return (
     <>
       <Container className={classes.root}>
-        <Link to={PATH.index}>
-          <Logo />
-        </Link>
-        <Search />
-        <div className={classes.buttons}>
+        <div className={classes.wrapperSearch}>
+          <Link to={PATH.index}>
+            <Logo />
+          </Link>
+          <Search />
+        </div>
+        <div className={classes.wrapperButtons}>
           <Button onClick={handleChangeThemes} aria-label="Screen Theme Switch">
             <Night />
           </Button>

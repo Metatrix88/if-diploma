@@ -1,5 +1,5 @@
-import React, {forwardRef, useId, useState} from 'react';
-import {useDispatch} from 'react-redux';
+import React, { forwardRef, useId, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
 // components
 import { Modal } from '../Modal';
@@ -28,15 +28,12 @@ export const LogInModal = forwardRef((_, ref) => {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    dispatch()
+    dispatch();
   };
 
   return (
     <Modal ref={ref} title="Log In to Fox Library">
-      <form
-        className={classes.root}
-        onSubmit={handleLogin}
-      >
+      <form className={classes.root} onSubmit={handleLogin}>
         <label className={classes.label} htmlFor={usernameId}>
           Username
         </label>

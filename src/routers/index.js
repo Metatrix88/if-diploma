@@ -5,13 +5,13 @@ import {
   Route,
 } from 'react-router-dom';
 
+// constants
 import { PATH } from '../constants/paths';
 
 // components
-import { App } from '../components/App';
 import { SystemLayout } from '../components/SystemLayout';
 import { ErrorBoundary } from '../components/ErrorBoundary';
-import {HomePage} from '../pages/HomePage';
+import { StartPage} from '../pages/StartPage';
 // import { Login } from '../pages/Login';
 // import { HotelPage } from '../pages/HotelPage';
 // import { ReviewsPage } from '../pages/ReviewsPage';
@@ -24,9 +24,8 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<SystemLayout />}>
       <Route errorElement={<ErrorBoundary />}>
-        {/*<Route path={PATH.login} element={<Login />} />*/}
-        <Route path={PATH.index} element={<App />} />
-        <Route path='/home' element={<HomePage />} />
+        <Route path={PATH.index} element={<StartPage />} />
+        {/*<Route path="/home" element={<StartPage />} />*/}
         {/*<Route path={`${PATH.hotelsPage}/:hotelId`} element={<HotelPage />} />*/}
         {/*<Route path={`${PATH.review}/:reviewId`} element={<ReviewsPage />} />*/}
         {/*<Route*/}
