@@ -7,9 +7,13 @@ import {
 
 export const nightIconStyles = (theme) => ({
   root: {
-    fill: theme.palette.icons.main,
-    width: 40,
+    fill: theme.palette.icons.bgColor,
+    width: 36,
     aspectRatio: '1/1',
+
+    '&:hover': {
+      fill: theme.palette.icons.main,
+    },
   },
 
   //For desktops:

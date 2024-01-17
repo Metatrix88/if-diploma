@@ -27,14 +27,16 @@ export const singUpModalStyles = () => ({
     padding: '8px 16px',
     height: 44,
     marginBottom: 16,
+    width: '100%',
 
     '&:last-of-type': {
       marginBottom: 24,
     },
+    '&$inputDate': {
+      marginBottom: 16,
+    },
   },
-  btn: {
-    fontSize: 18,
-  },
+  inputDate: {},
 });
 
 export const useSingUpModalStyles = createUseStyles(singUpModalStyles, {

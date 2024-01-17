@@ -1,7 +1,8 @@
-import React, { forwardRef, useId } from 'react';
+import React, { forwardRef, useId, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { getAuth, createUserWithEmailAndPassword } from 'firebase/auth';
 import { func } from 'prop-types';
+import DatePicker from 'react-datepicker';
 
 // slices
 import { setUser } from '../../store/slices/user.slice';
@@ -22,6 +23,11 @@ export const SingUpModal = forwardRef(
     const emailId = useId();
     const passwordId = useId();
     const dispatch = useDispatch();
+    const [selectedDate, setSelectedDate] = useState(null);
+
+    const handleDateChange = (date) => {
+      setSelectedDate(date);
+    };
 
     const handleSubmit = (event) => {
       event.preventDefault();
@@ -37,6 +43,7 @@ export const SingUpModal = forwardRef(
           dispatch(
             setUser({
               email: user.email,
+              password: password,
               token: user.accessToken,
               id: user.uid,
             }),
@@ -46,6 +53,7 @@ export const SingUpModal = forwardRef(
 
       if (username && birthdate && email && password) {
         const userData = {
+          isAuthenticated: true,
           username: username,
           birthdate: birthdate,
           email: email,
@@ -58,10 +66,10 @@ export const SingUpModal = forwardRef(
           setUser({
             username: username,
             birthdate: birthdate,
-            password: password,
           }),
         );
       }
+      setSelectedDate(null);
       onSwitchModal();
       onCloseModal();
     };
@@ -83,12 +91,17 @@ export const SingUpModal = forwardRef(
             <label className={classes.label} htmlFor={birthdateId}>
               Your birthdate
             </label>
-            <input
-              className={classes.textField}
+            <DatePicker
+              className={`${classes.textField} ${classes.inputDate}`}
               id={birthdateId}
-              type="text"
+              selected={selectedDate}
+              onChange={handleDateChange}
+              dateFormat="dd/MM/yyyy"
+              isClearable
+              showIcon
               name="birthdate"
-              placeholder="Your birthdate"
+              placeholderText="Your birthdate"
+              autoComplete="off"
               required
             />
             <label className={classes.label} htmlFor={emailId}>
@@ -114,9 +127,9 @@ export const SingUpModal = forwardRef(
               required
             />
             <Button
-              className={classes.btn}
               variant="contained"
-              color="primary"
+              color="primaryContained"
+              size="mediumContained"
               type="submit"
             >
               Sing Up

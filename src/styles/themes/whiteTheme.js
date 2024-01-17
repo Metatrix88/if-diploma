@@ -1,6 +1,8 @@
 import {
+  whiteThemeColorBlack,
   whiteThemeColorGeneralRed,
   whiteThemeColorGray,
+  whiteThemeColorLightGray, whiteThemeColorSecondaryBlue, whiteThemeColorSecondaryGray, whiteThemeColorSecondaryWhite,
   whiteThemeColorWhite,
 } from '../../constants/styles.constants';
 
@@ -11,19 +13,25 @@ export const whiteTheme = {
       // secondary: whiteThemeColorBlack,
       // tertiary: whiteThemeColorBlack,
       // quaternary: whiteThemeColorBlue,
-      textBtn: whiteThemeColorWhite,
+      // textBtn: whiteThemeColorWhite,
     },
     buttons: {
-      text: whiteThemeColorGray,
-      outlined: whiteThemeColorGeneralRed,
+      primaryContained: whiteThemeColorGeneralRed,
+      secondaryContained: whiteThemeColorSecondaryGray,
+      primaryContainedTextColor: whiteThemeColorWhite,
+      mainText: whiteThemeColorBlack,
+      secondaryText: whiteThemeColorGray,
+      accentText: whiteThemeColorGeneralRed,
     },
     icons: {
-      // bgColor: whiteThemeColorWhite,
       main: whiteThemeColorGeneralRed,
+      secondary: whiteThemeColorGeneralRed,
+      bgColor: whiteThemeColorLightGray,
+      bgColorSecondary: whiteThemeColorSecondaryBlue,
     },
     background: {
-      main: whiteThemeColorWhite,
-      // section: whiteThemeBgColor,
+      main: whiteThemeColorSecondaryWhite,
+      section: whiteThemeColorWhite,
       // secondary: whiteThemeBorderLightColor,
       // tertiary: whiteThemeBorderLightColor,
       // formMd: whiteThemeAccentColor,

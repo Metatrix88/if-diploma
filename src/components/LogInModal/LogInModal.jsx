@@ -1,6 +1,18 @@
 import React, { forwardRef, useId, useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { func } from 'prop-types';
+
+// constants
+import { PATH } from '../../constants/paths';
+import { authStatuses } from '../../constants/authStatuses';
+
+// hooks
+import { useAuth } from '../../hooks/use-auth';
+
+// slices
+import { setStatus } from '../../store/slices/auth.slice';
 
 // components
 import { Modal } from '../Modal';
@@ -8,18 +20,17 @@ import { Button } from '../UI/Button';
 
 // styles
 import { useLogInModalStyles } from './LogInModal.styles';
-import { useAuth } from '../../hooks/use-auth';
-// import { setUser } from '../../store/slices/user.slice';
 
 // eslint-disable-next-line react/display-name
-export const LogInModal = forwardRef((_, ref) => {
+export const LogInModal = forwardRef(({ onCloseModal }, ref) => {
   const classes = useLogInModalStyles();
   const usernameId = useId();
   const passwordId = useId();
   const [enteredUserName, setEnteredUserName] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
-  // const dispatch = useDispatch();
-  const { password, email } = useAuth();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { username, email } = useAuth();
 
   const handleChange = (event) => {
     if (event.target.name === 'username') {
@@ -33,18 +44,15 @@ export const LogInModal = forwardRef((_, ref) => {
   const handleLogin = (event) => {
     event.preventDefault();
     const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, password)
-      .then(({ user }) => {
-        console.log(user);
-        // dispatch(
-        //   setUser({
-        //     email: user.email,
-        //     token: user.accessToken,
-        //     id: user.uid,
-        //   }),
-        // );
+    signInWithEmailAndPassword(auth, email, enteredPassword)
+      .then(() => {
+        if (username === enteredUserName) {
+          dispatch(setStatus(authStatuses.loggedIn));
+          navigate(PATH.allBooks);
+          onCloseModal();
+        } else alert('Invalid user name!');
       })
-      .catch(console.error);
+      .catch(() => alert('Invalid password!'));
   };
 
   return (
@@ -75,9 +83,9 @@ export const LogInModal = forwardRef((_, ref) => {
           placeholder="Password"
         />
         <Button
-          className={classes.btn}
           variant="contained"
-          color="primary"
+          color="primaryContained"
+          size="mediumContained"
           type="submit"
         >
           Log In
@@ -86,3 +94,7 @@ export const LogInModal = forwardRef((_, ref) => {
     </Modal>
   );
 });
+
+LogInModal.propTypes = {
+  onCloseModal: func,
+};

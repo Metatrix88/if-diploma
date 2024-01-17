@@ -8,7 +8,7 @@ import { Loader } from './components/Loader';
 
 import { router } from './routers';
 import { store } from './store';
-import './firebase';
+import '../configs/firebase';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(

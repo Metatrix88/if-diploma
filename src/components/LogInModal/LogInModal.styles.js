@@ -32,9 +32,6 @@ export const logInModalStyles = () => ({
       marginBottom: 24,
     },
   },
-  btn: {
-    fontSize: 18,
-  },
 });
 
 export const useLogInModalStyles = createUseStyles(logInModalStyles, {

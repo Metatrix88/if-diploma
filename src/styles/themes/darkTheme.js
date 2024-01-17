@@ -1,7 +1,9 @@
 import {
   darkThemeColorBgBody,
+  darkThemeColorBlack,
   darkThemeColorGeneralBlue,
   darkThemeColorGray,
+  darkThemeColorSecondaryGray,
   darkThemeColorWhite,
 } from '../../constants/styles.constants';
 
@@ -12,19 +14,25 @@ export const darkTheme = {
       // secondary: darkThemeColorWhite,
       // tertiary: darkThemeColorYellow,
       // quaternary: darkThemeColorYellow,
-      textBtn: darkThemeColorWhite,
+      // textBtn: darkThemeColorWhite,
     },
     buttons: {
-      text: darkThemeColorGray,
-      outlined: darkThemeColorGeneralBlue,
+      primaryContained: darkThemeColorGeneralBlue,
+      secondaryContained: darkThemeColorGray,
+      primaryContainedTextColor: darkThemeColorWhite,
+      mainText: darkThemeColorBlack,
+      secondaryText: darkThemeColorGray,
+      accentText: darkThemeColorGeneralBlue,
     },
     icons: {
-      // bgColor: darkThemeColorDarkBlue,
       main: darkThemeColorGeneralBlue,
+      secondary: darkThemeColorSecondaryGray,
+      bgColor: darkThemeColorSecondaryGray,
+      bgColorSecondary: darkThemeColorGray,
     },
     background: {
       main: darkThemeColorBgBody,
-      // section: darkThemeBgColor,
+      section: darkThemeColorSecondaryGray,
       // secondary: darkThemeBgColor,
       // tertiary: darkThemeColorGray,
       // formMd: darkThemeBgColor,

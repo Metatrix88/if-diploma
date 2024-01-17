@@ -3,17 +3,17 @@ import classNames from 'classnames';
 import { string } from 'prop-types';
 
 // styles
-import { useAvatarBtnStyles } from './AvatarBtn.styles';
+import { useAvatarStyles } from './Avatar.styles';
 
-export const AvatarBtn = ({ className }) => {
-  const classes = useAvatarBtnStyles();
+export const Avatar = ({ className }) => {
+  const classes = useAvatarStyles();
   return (
     <svg className={classNames(classes.root, className)}>
-      <use href="#avatar" />
+      <use href="#avatarIcon" />
     </svg>
   );
 };
 
-AvatarBtn.propTypes = {
+Avatar.propTypes = {
   className: string,
 };

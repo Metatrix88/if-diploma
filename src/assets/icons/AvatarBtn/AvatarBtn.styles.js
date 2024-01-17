@@ -5,10 +5,10 @@ import {
   TABLET_BREAKPOINT,
 } from '../../../constants/styles.constants';
 
-export const nightIconStyles = (theme) => ({
+export const avatarBtnStyles = (theme) => ({
   root: {
-    fill: theme.palette.icons.main,
-    width: 40,
+    fill: theme.palette.icons.bgColor,
+    width: 36,
     aspectRatio: '1/1',
   },
 
@@ -34,6 +34,6 @@ export const nightIconStyles = (theme) => ({
   },
 });
 
-export const useNightIconStyles = createUseStyles(nightIconStyles, {
-  name: 'NightIcon',
+export const useAvatarBtnStyles = createUseStyles(avatarBtnStyles, {
+  name: 'Avatar',
 });
