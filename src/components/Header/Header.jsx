@@ -6,6 +6,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { PATH } from '../../constants/paths';
 import { themeVariants } from '../../constants/themeVariants';
 import { authStatuses } from '../../constants/authStatuses';
+import { LOCAL_STORAGE_KEY_USERDATA } from '../../constants/localStorageUtils';
+
+// helpers
+import { clearDataFromLocalStorage } from '../../assets/helpers/localStorage';
 
 // components
 import { Container } from '../Container';
@@ -57,7 +61,7 @@ export const Header = () => {
   const handleLogout = () => {
     dispatch(removeUser());
     dispatch(setStatus(authStatuses.loggedOut));
-    localStorage.removeItem('userData');
+    clearDataFromLocalStorage(LOCAL_STORAGE_KEY_USERDATA);
     navigate(PATH.index);
   };
 
@@ -85,10 +89,7 @@ export const Header = () => {
           <Search />
         </div>
         <div className={classes.wrapperButtons}>
-          <Button
-            onClick={handleChangeThemes}
-            aria-label="Screen Theme Switch"
-          >
+          <Button onClick={handleChangeThemes} aria-label="Screen Theme Switch">
             <Night />
           </Button>
           {isAuth === authStatuses.loggedIn ? (
@@ -106,11 +107,7 @@ export const Header = () => {
             </Button>
           )}
           {isAuth === authStatuses.loggedIn ? (
-            <Button
-              size="mediumText"
-              color="mainText"
-              aria-label="Your orders"
-            >
+            <Button size="mediumText" color="mainText" aria-label="Your orders">
               Your orders
             </Button>
           ) : (

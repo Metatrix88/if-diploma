@@ -2,7 +2,10 @@ import {
   whiteThemeColorBlack,
   whiteThemeColorGeneralRed,
   whiteThemeColorGray,
-  whiteThemeColorLightGray, whiteThemeColorSecondaryBlue, whiteThemeColorSecondaryGray, whiteThemeColorSecondaryWhite,
+  whiteThemeColorLightGray,
+  whiteThemeColorSecondaryBlue,
+  whiteThemeColorSecondaryGray,
+  whiteThemeColorSecondaryWhite,
   whiteThemeColorWhite,
 } from '../../constants/styles.constants';
 
@@ -32,7 +35,7 @@ export const whiteTheme = {
     background: {
       main: whiteThemeColorSecondaryWhite,
       section: whiteThemeColorWhite,
-      // secondary: whiteThemeBorderLightColor,
+      footer: whiteThemeColorSecondaryBlue,
       // tertiary: whiteThemeBorderLightColor,
       // formMd: whiteThemeAccentColor,
       // quaternary: whiteThemePrimaryDarkBlue,

@@ -7,6 +7,12 @@ import DatePicker from 'react-datepicker';
 // slices
 import { setUser } from '../../store/slices/user.slice';
 
+// constants
+import { LOCAL_STORAGE_KEY_USERDATA } from '../../constants/localStorageUtils';
+
+// helpers
+import { saveDataToLocalStorage } from '../../assets/helpers/localStorage';
+
 // components
 import { Modal } from '../Modal';
 import { Button } from '../UI/Button';
@@ -37,21 +43,23 @@ export const SingUpModal = forwardRef(
       const email = formData.get('email');
       const password = formData.get('password');
 
-      const auth = getAuth();
-      createUserWithEmailAndPassword(auth, email, password)
-        .then(({ user }) => {
-          dispatch(
-            setUser({
-              email: user.email,
-              password: password,
-              token: user.accessToken,
-              id: user.uid,
-            }),
-          );
-        })
-        .catch(console.error);
-
       if (username && birthdate && email && password) {
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, email, password)
+          .then(({ user }) => {
+            dispatch(
+              setUser({
+                email: user.email,
+                password: password,
+                token: user.accessToken,
+                id: user.uid,
+                username: username,
+                birthdate: birthdate,
+              }),
+            );
+          })
+          .catch(console.error);
+
         const userData = {
           isAuthenticated: true,
           username: username,
@@ -60,14 +68,9 @@ export const SingUpModal = forwardRef(
           password: password,
         };
 
-        localStorage.setItem('userData', JSON.stringify(userData));
-
-        dispatch(
-          setUser({
-            username: username,
-            birthdate: birthdate,
-          }),
-        );
+        saveDataToLocalStorage(LOCAL_STORAGE_KEY_USERDATA, userData);
+      } else {
+        alert('Please fill in all fields');
       }
       setSelectedDate(null);
       onSwitchModal();

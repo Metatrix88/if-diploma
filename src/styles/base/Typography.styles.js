@@ -44,6 +44,11 @@ export const typographyStyles = (theme) => ({
     fontSize: 20,
     lineHeight: lineHeight,
   },
+  h6: {
+    fontWeight: 700,
+    fontSize: 18,
+    lineHeight: lineHeight,
+  },
 
   //For desktops:
   [`@media (max-width: ${DESKTOP_SMALL_BREAKPOINT})`]: {
@@ -58,6 +63,9 @@ export const typographyStyles = (theme) => ({
     },
     h5: {
       fontSize: 18,
+    },
+    h6: {
+      fontSize: 16,
     },
   },
 
@@ -74,6 +82,9 @@ export const typographyStyles = (theme) => ({
     },
     h5: {
       fontSize: 16,
+    },
+    h6: {
+      fontSize: 14,
     },
   },
 

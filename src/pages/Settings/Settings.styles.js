@@ -2,9 +2,14 @@ import { createUseStyles } from 'react-jss';
 
 // constants
 import {
-  DESKTOP_RADIUS, lineHeight,
-  MOBILE_BREAKPOINT, MOBILE_RADIUS,
-  TABLET_BREAKPOINT, TABLET_RADIUS, whiteThemeColorSecondaryGray,
+  DESKTOP_RADIUS,
+  lineHeight,
+  MOBILE_BREAKPOINT,
+  MOBILE_RADIUS,
+  TABLET_BREAKPOINT,
+  TABLET_RADIUS,
+  whiteThemeColorGeneralRed,
+  whiteThemeColorSecondaryGray,
 } from '../../constants/styles.constants';
 
 export const SettingsStyles = (theme) => ({
@@ -14,7 +19,7 @@ export const SettingsStyles = (theme) => ({
     backgroundColor: theme.palette.background.section,
     padding: '26px 37px 21px',
     textAlign: 'center',
-    margin: '0 auto',
+    margin: '0 auto 40px',
     borderRadius: DESKTOP_RADIUS,
   },
   title: {
@@ -30,9 +35,18 @@ export const SettingsStyles = (theme) => ({
     margin: '0 auto 16px',
     backgroundColor: theme.palette.icons.bgColorSecondary,
   },
+  image: {
+    width: 110,
+    height: 110,
+    borderRadius: '50%',
+  },
   loadingPhotoBtn: {
     maxWidth: 122,
     margin: '0 auto 26px',
+
+    '&:hover': {
+      color: whiteThemeColorGeneralRed,
+    },
   },
   form: {
     display: 'flex',
@@ -83,6 +97,10 @@ export const SettingsStyles = (theme) => ({
       width: 90,
       height: 90,
       margin: '0 auto 16px',
+    },
+    image: {
+      width: 90,
+      height: 90,
     },
     loadingPhotoBtn: {
       maxWidth: 122,

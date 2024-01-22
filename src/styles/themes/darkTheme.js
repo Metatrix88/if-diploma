@@ -33,7 +33,7 @@ export const darkTheme = {
     background: {
       main: darkThemeColorBgBody,
       section: darkThemeColorSecondaryGray,
-      // secondary: darkThemeBgColor,
+      footer: darkThemeColorSecondaryGray,
       // tertiary: darkThemeColorGray,
       // formMd: darkThemeBgColor,
       // quaternary: darkThemeColorDarkBlue,

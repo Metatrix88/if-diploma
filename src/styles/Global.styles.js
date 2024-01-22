@@ -29,7 +29,6 @@ export const globalStyles = (theme) => ({
       backgroundColor: theme.palette.buttons.contained,
       height: 20,
       width: 20,
-      fontSize: 14,
     },
   },
 });

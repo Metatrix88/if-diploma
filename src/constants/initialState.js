@@ -15,5 +15,6 @@ export const INITIAL_STATE = {
     password: null,
     token: null,
     id: null,
+    imageAvatar: null,
   },
 };

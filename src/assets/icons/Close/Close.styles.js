@@ -1,5 +1,8 @@
 import { createUseStyles } from 'react-jss';
-import {whiteThemeColorGray, whiteThemeColorSecondaryGray} from '../../../constants/styles.constants';
+import {
+  whiteThemeColorGray,
+  whiteThemeColorSecondaryGray,
+} from '../../../constants/styles.constants';
 
 export const closeStyles = () => ({
   root: {

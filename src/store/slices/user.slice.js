@@ -14,6 +14,7 @@ const userSlice = createSlice({
       password: null,
       token: null,
       id: null,
+      imageAvatar: null,
     }),
   },
 });
