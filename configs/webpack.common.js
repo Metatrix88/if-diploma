@@ -3,7 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/index.js.js',
   output: {
     path: path.resolve(__dirname, '../dist'),
     filename: 'js/app-[contenthash].js',
@@ -41,7 +41,7 @@ module.exports = {
   plugins: [
     new HTMLWebpackPlugin({
       inject: 'body',
-      template: './public/index.html',
+      template: './public/index.js.html',
     }),
     new Dotenv({
       path: './.env.local',

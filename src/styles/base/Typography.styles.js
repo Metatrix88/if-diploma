@@ -23,7 +23,11 @@ export const typographyStyles = (theme) => ({
     fontSize: 16,
     color: whiteThemeColorBlack,
   },
-
+  h1: {
+    fontWeight: 700,
+    fontSize: 40,
+    lineHeight: lineHeight,
+  },
   h2: {
     fontWeight: 700,
     fontSize: 38,

@@ -1,3 +1,2 @@
-// export const urls = 'https://if-student-api.onrender.com/api/hotels';
-//
-// export const popularHotelsUrl = `${urls}/popular`;
+export const urls = 'https://if-fox-library-api.onrender.com/api/library';
+

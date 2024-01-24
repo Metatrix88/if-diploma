@@ -37,6 +37,7 @@ export const Header = () => {
   const isAuth = useSelector((state) => state.auth.status);
   const themeMode = useSelector((state) => state.themes.variant);
   const [isDropDownOpen, setDropDownOpen] = useState(false);
+  const [activeButtons, setActiveButtons] = useState(null);
   const { username } = useAuth();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -63,6 +64,13 @@ export const Header = () => {
     dispatch(setStatus(authStatuses.loggedOut));
     clearDataFromLocalStorage(LOCAL_STORAGE_KEY_USERDATA);
     navigate(PATH.index);
+  };
+
+  const handleButtonClick = (buttonName) => {
+    setActiveButtons(buttonName === activeButtons ? null : buttonName);
+    if (buttonName === 'allBooks') {
+      navigate(PATH.allBooks);
+    }
   };
 
   const handleClick = (event) => {
@@ -93,7 +101,11 @@ export const Header = () => {
             <Night />
           </Button>
           {isAuth === authStatuses.loggedIn ? (
-            <Button size="mediumText" color="mainText">
+            <Button
+              size="mediumText"
+              onClick={() => handleButtonClick('allBooks')}
+              color={activeButtons === 'allBooks' ? 'accentText' : "mainText"}
+            >
               All books
             </Button>
           ) : (
@@ -107,7 +119,11 @@ export const Header = () => {
             </Button>
           )}
           {isAuth === authStatuses.loggedIn ? (
-            <Button size="mediumText" color="mainText" aria-label="Your orders">
+            <Button
+              size="mediumText"
+              onClick={() => handleButtonClick('yourOrders')}
+              color={activeButtons === 'yourOrders' ? 'accentText' : "mainText"}
+              aria-label="Your orders">
               Your orders
             </Button>
           ) : (

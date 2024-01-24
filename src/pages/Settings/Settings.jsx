@@ -78,22 +78,6 @@ export const Settings = () => {
     }
   };
 
-  // const handleFileChange = (event) => {
-  //   const file = event.target.files[0];
-  //   if (file) {
-  //     const reader = new FileReader();
-  //     reader.onloadend = () => {
-  //       // const imageBase64 = reader.result.split(',')[1];
-  //       const imageBase64 = btoa(reader.result);
-  //       setSelectedFileBase64(imageBase64);
-  //       console.log(imageBase64)
-  //       setSelectedFile(URL.createObjectURL(file));
-  //       // setSelectedFile(reader.result);
-  //     };
-  //     reader.readAsDataURL(file);
-  //   }
-  // };
-
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
@@ -168,7 +152,6 @@ export const Settings = () => {
                 src={selectedFile}
                 alt="Uploaded Avatar"
                 className={classes.image}
-                // style={{ width: '120px', height: '120px' }}
               />
             ) : (
               <Avatar />
