@@ -6,5 +6,6 @@ export * from './Facebook';
 export * from './Error';
 export * from './Logo';
 export * from './Search';
+export * from './Star';
 export * from './Night';
 export * from './Close';

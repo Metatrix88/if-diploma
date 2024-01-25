@@ -9,7 +9,7 @@ import {
 
 export const staticPageStyles = () => ({
   root: {
-    padding: '150px 16px',
+    padding: 16,
     textAlign: 'center',
     backgroundColor: whiteThemeColorSecondaryBlue,
   },
@@ -27,9 +27,6 @@ export const staticPageStyles = () => ({
 
   //For tablets:
   [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
-    root: {
-      padding: '55px 16px',
-    },
     title: {
       marginBottom: 40,
     },
@@ -37,9 +34,6 @@ export const staticPageStyles = () => ({
 
   // For mobiles:
   [`@media (max-width: ${MOBILE_BREAKPOINT})`]: {
-    root: {
-      padding: '45px 16px',
-    },
     title: {
       marginBottom: 32,
     },

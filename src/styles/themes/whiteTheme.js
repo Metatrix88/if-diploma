@@ -12,9 +12,9 @@ import {
 export const whiteTheme = {
   palette: {
     text: {
-      // main: whiteThemeColorWhite,
-      // secondary: whiteThemeColorBlack,
-      // tertiary: whiteThemeColorBlack,
+      main: whiteThemeColorWhite,
+      secondary: whiteThemeColorBlack,
+      tertiary: whiteThemeColorGray,
       // quaternary: whiteThemeColorBlue,
       // textBtn: whiteThemeColorWhite,
     },

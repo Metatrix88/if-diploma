@@ -104,7 +104,7 @@ export const Header = () => {
             <Button
               size="mediumText"
               onClick={() => handleButtonClick('allBooks')}
-              color={activeButtons === 'allBooks' ? 'accentText' : "mainText"}
+              color={activeButtons === 'allBooks' ? 'accentText' : 'mainText'}
             >
               All books
             </Button>
@@ -122,8 +122,9 @@ export const Header = () => {
             <Button
               size="mediumText"
               onClick={() => handleButtonClick('yourOrders')}
-              color={activeButtons === 'yourOrders' ? 'accentText' : "mainText"}
-              aria-label="Your orders">
+              color={activeButtons === 'yourOrders' ? 'accentText' : 'mainText'}
+              aria-label="Your orders"
+            >
               Your orders
             </Button>
           ) : (

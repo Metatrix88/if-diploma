@@ -24,8 +24,12 @@ export const AllBooksStyles = (theme) => ({
     flexWrap: 'wrap',
     marginRight: -8,
     marginLeft: -8,
+    marginBottom: -12,
   },
-
+  button: {
+    maxWidth: 185,
+    margin: '0 auto',
+  },
 
   //For tablets:
   [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
@@ -37,6 +41,9 @@ export const AllBooksStyles = (theme) => ({
     title: {
       marginBottom: 30,
     },
+    button: {
+      maxWidth: 140,
+    },
   },
   // For mobiles:
   [`@media (max-width: ${MOBILE_BREAKPOINT})`]: {
@@ -47,6 +54,15 @@ export const AllBooksStyles = (theme) => ({
     },
     title: {
       marginBottom: 16,
+      textAlign: 'center',
+    },
+    wrapperCards: {
+      marginRight: -4,
+      marginLeft: -4,
+      marginBottom: 0,
+    },
+    button: {
+      maxWidth: 100,
     },
   },
 });

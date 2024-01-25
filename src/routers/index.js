@@ -11,7 +11,8 @@ import { PATH } from '../constants/paths';
 // components
 import { SystemLayout } from '../components/SystemLayout';
 import { ErrorBoundary } from '../components/ErrorBoundary';
-import { StartPage } from '../pages/StartPage';
+import { App } from '../components/App';
+import { MainPage } from '../pages/MainPage';
 import { AllBooks } from '../pages/AllBooks';
 import { Settings } from '../pages/Settings';
 import { StaticPage } from '../pages/StaticPage';
@@ -20,15 +21,14 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<SystemLayout />}>
       <Route errorElement={<ErrorBoundary />}>
-        <Route path={PATH.index} element={<StartPage />} />
-        <Route path={PATH.allBooks} element={<AllBooks />} />
-        <Route path={PATH.settings} element={<Settings />} />
-        <Route path=":staticPage" element={<StaticPage />} />
-        {/*<Route path={`${PATH.review}/:reviewId`} element={<ReviewsPage />} />*/}
-        {/*<Route*/}
-        {/*  path={`${PATH.destination}/:tab/:destinationId`}*/}
-        {/*  element={<DestinationsPage />}*/}
-        {/*/>*/}
+        <Route path={PATH.index} element={<App />}>
+          <Route errorElement={<ErrorBoundary />}>
+            <Route index element={<MainPage />} />
+            <Route path={PATH.allBooks} element={<AllBooks />} />
+            <Route path={PATH.settings} element={<Settings />} />
+            <Route path=":staticPage" element={<StaticPage />} />
+          </Route>
+        </Route>
       </Route>
     </Route>,
   ),

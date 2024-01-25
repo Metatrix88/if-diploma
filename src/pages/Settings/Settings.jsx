@@ -13,9 +13,7 @@ import {
 } from '../../assets/helpers/localStorage';
 
 // components
-import { Header } from '../../components/Header';
 import { Button } from '../../components/UI/Button';
-import { Footer } from '../../components/Footer';
 
 // icons
 import { Avatar } from '../../assets/icons';
@@ -141,121 +139,117 @@ export const Settings = () => {
   };
 
   return (
-    <>
-      <Header />
-      <div className={classes.root}>
-        <h5 className={classes.title}>Settings</h5>
-        <form className={classes.form} onSubmit={handleSubmit}>
-          <div className={classes.avatar}>
-            {selectedFile ? (
-              <img
-                src={selectedFile}
-                alt="Uploaded Avatar"
-                className={classes.image}
-              />
-            ) : (
-              <Avatar />
-            )}
-          </div>
-          <label>
-            <input
-              type="file"
-              name="file"
-              accept="image/*"
-              onChange={handleFileChange}
-              style={{ display: 'none' }}
-              id="fileInput"
+    <section className={classes.root}>
+      <h5 className={classes.title}>Settings</h5>
+      <form className={classes.form} onSubmit={handleSubmit}>
+        <div className={classes.avatar}>
+          {selectedFile ? (
+            <img
+              src={selectedFile}
+              alt="Uploaded Avatar"
+              className={classes.image}
             />
-            <Button
-              variant="contained"
-              size="smallContained"
-              color="secondaryContained"
-              className={classes.loadingPhotoBtn}
-              onClick={() => document.getElementById('fileInput').click()}
-            >
-              Change photo
-            </Button>
-          </label>
-          <label className={classes.label} htmlFor={usernameId}>
-            Username
-          </label>
+          ) : (
+            <Avatar />
+          )}
+        </div>
+        <label>
           <input
-            className={classes.textField}
-            id={usernameId}
-            type="text"
-            name="username"
-            value={newUserName}
-            onChange={handleChange}
-            placeholder="Your username"
-            required
-          />
-          <label className={classes.label} htmlFor={birthdateId}>
-            Your birthdate
-          </label>
-          <DatePicker
-            className={`${classes.textField} ${classes.inputDate}`}
-            id={birthdateId}
-            selected={newBirthdate}
-            onChange={(date) => handleDateChange(date)}
-            dateFormat="dd/MM/yyyy"
-            isClearable
-            showIcon
-            name="birthdate"
-            placeholderText="Your birthdate"
-            autoComplete="off"
-            required
-          />
-          <label className={classes.label} htmlFor={emailId}>
-            Email
-          </label>
-          <input
-            className={classes.textField}
-            id={emailId}
-            value={newEmail}
-            onChange={handleChange}
-            type="email"
-            name="email"
-            placeholder="Email"
-            required
-          />
-          <label className={classes.label} htmlFor={passwordId}>
-            Password
-          </label>
-          <input
-            className={classes.textField}
-            id={passwordId}
-            value={oldPassword}
-            onChange={handleChange}
-            type="password"
-            name="oldPassword"
-            placeholder="Your password"
-            required
-          />
-          <label className={classes.label} htmlFor={newPasswordId}>
-            New password
-          </label>
-          <input
-            className={classes.textField}
-            id={newPasswordId}
-            value={newPassword}
-            onChange={handleChange}
-            type="password"
-            name="newPassword"
-            placeholder="New password"
-            required
+            type="file"
+            name="file"
+            accept="image/*"
+            onChange={handleFileChange}
+            style={{ display: 'none' }}
+            id="fileInput"
           />
           <Button
-            className={classes.saveBtn}
             variant="contained"
-            color="primaryContained"
             size="smallContained"
-            type="submit"
+            color="secondaryContained"
+            className={classes.loadingPhotoBtn}
+            onClick={() => document.getElementById('fileInput').click()}
           >
-            Save
+            Change photo
           </Button>
-        </form>
-      </div>
-      <Footer />
-    </>
+        </label>
+        <label className={classes.label} htmlFor={usernameId}>
+          Username
+        </label>
+        <input
+          className={classes.textField}
+          id={usernameId}
+          type="text"
+          name="username"
+          value={newUserName}
+          onChange={handleChange}
+          placeholder="Your username"
+          required
+        />
+        <label className={classes.label} htmlFor={birthdateId}>
+          Your birthdate
+        </label>
+        <DatePicker
+          className={`${classes.textField} ${classes.inputDate}`}
+          id={birthdateId}
+          selected={newBirthdate}
+          onChange={(date) => handleDateChange(date)}
+          dateFormat="dd/MM/yyyy"
+          isClearable
+          showIcon
+          name="birthdate"
+          placeholderText="Your birthdate"
+          autoComplete="off"
+          required
+        />
+        <label className={classes.label} htmlFor={emailId}>
+          Email
+        </label>
+        <input
+          className={classes.textField}
+          id={emailId}
+          value={newEmail}
+          onChange={handleChange}
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <label className={classes.label} htmlFor={passwordId}>
+          Password
+        </label>
+        <input
+          className={classes.textField}
+          id={passwordId}
+          value={oldPassword}
+          onChange={handleChange}
+          type="password"
+          name="oldPassword"
+          placeholder="Your password"
+          required
+        />
+        <label className={classes.label} htmlFor={newPasswordId}>
+          New password
+        </label>
+        <input
+          className={classes.textField}
+          id={newPasswordId}
+          value={newPassword}
+          onChange={handleChange}
+          type="password"
+          name="newPassword"
+          placeholder="New password"
+          required
+        />
+        <Button
+          className={classes.saveBtn}
+          variant="contained"
+          color="primaryContained"
+          size="smallContained"
+          type="submit"
+        >
+          Save
+        </Button>
+      </form>
+    </section>
   );
 };

@@ -1,5 +1,4 @@
 export const PAGE = {
-  index: '/',
   allBooks: 'all-books',
   settings: 'settings',
   about: 'about',
@@ -11,7 +10,7 @@ export const PAGE = {
 };
 
 export const PATH = {
-  index: `${PAGE.index}`,
+  index: '/',
   allBooks: `/${PAGE.allBooks}`,
   settings: `/${PAGE.settings}`,
   about: `/${PAGE.about}`,

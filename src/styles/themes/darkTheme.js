@@ -2,7 +2,7 @@ import {
   darkThemeColorBgBody,
   darkThemeColorBlack,
   darkThemeColorGeneralBlue,
-  darkThemeColorGray,
+  darkThemeColorGray, darkThemeColorGrayTwo,
   darkThemeColorSecondaryGray,
   darkThemeColorWhite,
 } from '../../constants/styles.constants';
@@ -10,9 +10,9 @@ import {
 export const darkTheme = {
   palette: {
     text: {
-      // main: darkThemeColorYellow,
-      // secondary: darkThemeColorWhite,
-      // tertiary: darkThemeColorYellow,
+      main: darkThemeColorBlack,
+      secondary: darkThemeColorWhite,
+      tertiary: darkThemeColorGrayTwo,
       // quaternary: darkThemeColorYellow,
       // textBtn: darkThemeColorWhite,
     },

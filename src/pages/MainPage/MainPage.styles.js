@@ -9,8 +9,8 @@ import {
   whiteThemeColorSecondaryBlue,
 } from '../../constants/styles.constants';
 
-export const startPageStyles = () => ({
-  wrapMain: {
+export const mainPageStyles = () => ({
+  root: {
     display: 'flex',
     backgroundColor: whiteThemeColorSecondaryBlue,
     padding: '68px 80px',
@@ -48,7 +48,7 @@ export const startPageStyles = () => ({
   },
   //For desktops:
   [`@media (max-width: ${DESKTOP_SMALL_BREAKPOINT})`]: {
-    wrapMain: {
+    root: {
       padding: 50,
     },
     image: {
@@ -58,7 +58,7 @@ export const startPageStyles = () => ({
 
   //For tablets:
   [`@media (max-width: ${TABLET_BREAKPOINT})`]: {
-    wrapMain: {
+    root: {
       padding: '24px 8px',
       borderRadius: TABLET_RADIUS,
     },
@@ -81,7 +81,7 @@ export const startPageStyles = () => ({
 
   // For mobiles:
   [`@media (max-width: ${MOBILE_BREAKPOINT})`]: {
-    wrapMain: {
+    root: {
       padding: '16px 8px',
       borderRadius: MOBILE_RADIUS,
     },
@@ -103,6 +103,6 @@ export const startPageStyles = () => ({
   },
 });
 
-export const useStartPageStyles = createUseStyles(startPageStyles, {
-  name: 'StartPage',
+export const useMainPageStyles = createUseStyles(mainPageStyles, {
+  name: 'MainPage',
 });

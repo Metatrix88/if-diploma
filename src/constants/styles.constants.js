@@ -17,6 +17,7 @@ export const darkThemeColorWhite = '#ffffff';
 export const darkThemeColorBlack = '#000000';
 export const darkThemeColorGeneralBlue = '#0737cf';
 export const darkThemeColorGray = '#505c6a';
+export const darkThemeColorGrayTwo = '#03101e';
 export const darkThemeColorSecondaryGray = '#6e819f';
 export const darkThemeColorBgBody = '#d1dced';
 

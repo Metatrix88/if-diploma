@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { footerMenu } from '../../constants/footerMenu';
 
 // icons
-import { Facebook, Instagram } from '../../assets/icons';
+import { Instagram, Facebook } from '../../assets/icons';
 
 // components
 import { Container } from '../Container';

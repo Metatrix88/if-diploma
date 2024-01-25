@@ -1,5 +1,5 @@
 import React from 'react';
-import { node } from 'prop-types';
+import {node, string} from 'prop-types';
 import classNames from 'classnames';
 
 // styles
@@ -16,4 +16,5 @@ export const Container = ({ children, className }) => {
 
 Container.propTypes = {
   children: node.isRequired,
+  className: string,
 };
